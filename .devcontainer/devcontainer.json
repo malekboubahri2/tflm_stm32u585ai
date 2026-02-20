@@ -1,0 +1,35 @@
+{
+    "name": "TensorFlow Lite for MCUs codespace",
+    "image":"ubuntu:22.04",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/tflite-micro,type=bind",
+    "workspaceFolder": "/workspaces/tflite-micro",
+
+    "postCreateCommand": "bash scripts/setup.sh",
+    "runArgs": [
+        "--privileged",
+        "--device=/dev/bus/usb:/dev/bus/usb",
+        "--device=/dev/tty:/dev/tty"
+        
+    ],
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "editor.renderWhitespace": "all",
+                "editor.rulers": [100]
+            },
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cmake-tools",
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "eamodio.gitlens",
+                "marus25.cortex-debug",
+                "ms-vscode.cpptools-extension-pack",
+                "ms-vscode.vscode-serial-monitor"
+            ]
+        }
+    },
+    "remoteUser": "root"
+
+}
