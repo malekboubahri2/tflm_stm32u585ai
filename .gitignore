@@ -1,0 +1,25 @@
+# Build artifacts
+build/
+*.elf
+*.bin
+*.hex
+
+# STM32CubeIDE and other IDE files
+*.project
+*.cproject
+*.swp
+*.user
+*.launch
+
+# VS Code
+.vscode/
+
+# Temporary files
+*.o
+*.d
+
+# Python virtualenvs (if any)
+venv/
+
+# MacOS
+.DS_Store
