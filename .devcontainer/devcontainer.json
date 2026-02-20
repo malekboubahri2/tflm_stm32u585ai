@@ -4,7 +4,7 @@
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/tflite-micro,type=bind",
     "workspaceFolder": "/workspaces/tflite-micro",
 
-    "postCreateCommand": "bash scripts/setup.sh",
+    "postCreateCommand": "bash .devcontainer/scripts/setup.sh",
     "runArgs": [
         "--privileged",
         "--device=/dev/bus/usb:/dev/bus/usb",
