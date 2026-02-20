@@ -1,0 +1,1 @@
+### This repo will be used to test TensorFlow Lite for MCUs on B-U585I-IOT02A board
