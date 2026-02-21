@@ -1,6 +1,6 @@
 {
     "name": "TensorFlow Lite for MCUs codespace",
-    "image":"ubuntu:22.04",
+    "image":"ubuntu:24.04",
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/tflite-micro,type=bind",
     "workspaceFolder": "/workspaces/tflite-micro",
 
