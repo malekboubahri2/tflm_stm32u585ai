@@ -11,9 +11,6 @@ build/
 *.user
 *.launch
 
-# VS Code
-.vscode/
-
 # Temporary files
 *.o
 *.d
