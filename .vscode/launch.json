@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "openocd",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/firmware.elf",
+            "device": "STM32U585AI",
+            "configFiles": [
+                "${workspaceFolder}/openocd/interface/stlink.cfg",
+                "${workspaceFolder}/openocd/target/stm32u5x.cfg"
+            ],
+            "runToEntryPoint": "main",     
+            "preLaunchTask": "Flash",
+            "gdbPath": "/usr/bin/gdb-multiarch",
+            "svdFile": "${workspaceFolder}/drivers/CMSIS/Device/ST/STM32U5xx/Include/STM32U585.svd",
+            "symbolFiles": [
+                "${workspaceFolder}/firmware.elf"
+            ]
+        }
+    ]
+}
