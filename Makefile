@@ -74,4 +74,4 @@ flash: firmware.bin
 		-c "program firmware.bin reset exit"
 
 clean:
-	rm -rf $(OBJDIR) firmware.elf firmware.bin
+	rm -rf $(OBJDIR) firmware.elf firmware.bin firmware.map
