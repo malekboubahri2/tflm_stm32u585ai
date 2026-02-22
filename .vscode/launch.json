@@ -15,11 +15,23 @@
             ],
             "runToEntryPoint": "main",     
             "preLaunchTask": "Flash",
-            "gdbPath": "/usr/bin/gdb-multiarch",
+            "gdbPath": "/opt/arm-gnu-toolchain/bin/arm-none-eabi-gdb",
             "svdFile": "${workspaceFolder}/drivers/CMSIS/Device/ST/STM32U5xx/Include/STM32U585.svd",
             "symbolFiles": [
                 "${workspaceFolder}/firmware.elf"
-            ]
+            ],
+            "swoConfig": {
+                "enabled": true,
+                "cpuFrequency": 4000000,
+                "swoFrequency": 2000000,
+                "source": "probe",
+                "decoders": [
+                {
+                    "port": 0,
+                    "type": "console"
+                }
+                ]
+            }
         }
     ]
 }
