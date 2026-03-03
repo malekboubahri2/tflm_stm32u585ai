@@ -1,7 +1,7 @@
-# Minimal STM32 project Makefile
 
 # toolchain binaries
 CC=arm-none-eabi-gcc
+CXX=arm-none-eabi-g++
 LD=arm-none-eabi-ld
 OBJCOPY=arm-none-eabi-objcopy
 
@@ -14,6 +14,12 @@ CFLAGS  = -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG \
           -O0 -ffunction-sections -fdata-sections \
           -Wall -fstack-usage \
           --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb
+
+CXXFLAGS = -mcpu=cortex-m33 -std=gnu++17 -g3 -DDEBUG \
+            -DSTM32 -DSTM32U585xx -DB_U585I_IOT02A -DSTM32U585AIIxQ -DSTM32U5 \
+            -O0 -ffunction-sections -fdata-sections \
+            -Wall -fstack-usage \
+            --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb
 
 # assembler flags
 ASFLAGS = $(CFLAGS) -x assembler-with-cpp
@@ -33,18 +39,35 @@ SRCDIR=app/src
 # include directories for project headers and CMSIS
 INCDIRS=drivers/CMSIS/Device/ST/STM32U5xx/Include \
         drivers/CMSIS/Include \
-        app/inc
+        app/inc \
+        mw/tensorflow \
+        mw/third_party/flatbuffers/include \
+        mw/third_party/ruy \
+        mw/third_party/gemmlowp \
+        mw/third_party/kissfft
 OBJDIR=build
 
 # source lists
-SOURCES=$(wildcard $(SRCDIR)/*.c)
+C_SOURCES=$(wildcard $(SRCDIR)/*.c)
+# compile any C++ sources in app/src plus TFLM library under mw/tensorflow
+CPP_SOURCES=$(wildcard $(SRCDIR)/*.cpp $(SRCDIR)/*.cc $(SRCDIR)/*.cxx) \
+            $(shell find mw/tensorflow/tensorflow/lite -name '*.cc' -o -name '*.cpp' 2>/dev/null)
 ASOURCES=$(wildcard $(SRCDIR)/*.s)
+SOURCES := $(C_SOURCES) $(CPP_SOURCES)
 
-OBJECTS=$(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SOURCES)) \
+# object files for C++ sources; transform each extension separately
+CPP_OBJECTS=$(CPP_SOURCES:$(SRCDIR)/%=$(OBJDIR)/%)
+CPP_OBJECTS := $(CPP_OBJECTS:.cpp=.o)
+CPP_OBJECTS := $(CPP_OBJECTS:.cc=.o)
+CPP_OBJECTS := $(CPP_OBJECTS:.cxx=.o)
+
+OBJECTS=$(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(C_SOURCES)) \
+        $(CPP_OBJECTS) \
         $(patsubst $(SRCDIR)/%.s,$(OBJDIR)/%.o,$(ASOURCES))
 
 # include paths
 CFLAGS += $(addprefix -I,$(INCDIRS))
+CXXFLAGS += $(addprefix -I,$(INCDIRS))
 
 -include $(OBJECTS:.o=.d)
 
@@ -54,11 +77,17 @@ all: firmware.bin
 $(OBJDIR)/%.o: $(SRCDIR)/%.c | $(OBJDIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
+$(OBJDIR)/%.o: $(SRCDIR)/%.cpp | $(OBJDIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.cc | $(OBJDIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
 $(OBJDIR)/%.o: $(SRCDIR)/%.s | $(OBJDIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 firmware.elf: $(OBJECTS)
-	$(CC) $(CFLAGS) $(OBJECTS) $(LDFLAGS) -o $@
+	$(CXX) $(CXXFLAGS) $(OBJECTS) $(LDFLAGS) -o $@
 
 firmware.bin: firmware.elf
 	$(OBJCOPY) -O binary $< $@
