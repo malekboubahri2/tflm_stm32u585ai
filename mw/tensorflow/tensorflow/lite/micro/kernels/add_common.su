@@ -1,0 +1,8 @@
+/usr/include/newlib/c++/13.2.1/limits:1678:7:static constexpr float std::numeric_limits<float>::max()	4	static
+/usr/include/newlib/c++/13.2.1/limits:1682:7:static constexpr float std::numeric_limits<float>::lowest()	4	static
+/usr/include/newlib/c++/13.2.1/arm-none-eabi/thumb/v8-m.main+fp/hard/bits/gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+mw/tensorflow/tensorflow/lite/micro/micro_context.h:120:22:tflite::MicroContext* tflite::GetMicroContext(const TfLiteContext*)	16	static
+mw/tensorflow/tensorflow/lite/micro/kernels/add_common.cc:35:14:TfLiteStatus tflite::CalculateOpDataAdd(TfLiteContext*, TfLiteAddParams*, const TfLiteTensor*, const TfLiteTensor*, TfLiteTensor*, OpDataAdd*)	80	static
+mw/tensorflow/tensorflow/lite/micro/kernels/add_common.cc:79:14:TfLiteStatus tflite::AddPrepare(TfLiteContext*, TfLiteNode*)	64	static
+/usr/include/newlib/c++/13.2.1/bits/stl_algobase.h:257:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = float]	16	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.h:274:6:void tflite::CalculateActivationRange(TfLiteFusedActivation, T*, T*) [with T = float]	24	static

@@ -1,0 +1,2 @@
+/usr/include/newlib/c++/13.2.1/arm-none-eabi/thumb/v8-m.main+fp/hard/bits/gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+mw/tensorflow/tensorflow/lite/micro/tflite_bridge/op_resolver_bridge.cc:26:14:TfLiteStatus tflite::GetRegistrationFromOpCode(const OperatorCode*, const OpResolver&, const TfLiteRegistration**)	24	static

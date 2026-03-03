@@ -1,0 +1,2 @@
+mw/tensorflow/tensorflow/lite/micro/micro_log.cc:27:6:void Log(const char*, va_list)	272	static
+mw/tensorflow/tensorflow/lite/micro/micro_log.cc:41:6:)	16	static

@@ -1,0 +1,1 @@
+mw/tensorflow/tensorflow/lite/micro/mcu_custom_port/system_setup.cc:28:6:void tflite::InitializeTarget()	4	static

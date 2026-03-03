@@ -1,0 +1,6 @@
+/usr/include/newlib/c++/13.2.1/arm-none-eabi/thumb/v8-m.main+fp/hard/bits/gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+mw/tensorflow/tensorflow/lite/micro/kernels/pooling.cc:27:14:TfLiteStatus tflite::{anonymous}::AverageEval(TfLiteContext*, TfLiteNode*)	40	static
+mw/tensorflow/tensorflow/lite/micro/kernels/pooling.cc:56:14:TfLiteStatus tflite::{anonymous}::MaxEval(TfLiteContext*, TfLiteNode*)	40	static
+mw/tensorflow/tensorflow/lite/micro/kernels/pooling.cc:84:7:void* tflite::{anonymous}::Init(TfLiteContext*, const char*, size_t)	24	static
+mw/tensorflow/tensorflow/lite/micro/kernels/pooling.cc:91:20:TfLiteRegistration tflite::Register_AVERAGE_POOL_2D()	24	static
+mw/tensorflow/tensorflow/lite/micro/kernels/pooling.cc:95:20:TfLiteRegistration tflite::Register_MAX_POOL_2D()	24	static

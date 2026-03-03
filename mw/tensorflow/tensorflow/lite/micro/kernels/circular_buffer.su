@@ -1,0 +1,7 @@
+/usr/include/newlib/c++/13.2.1/arm-none-eabi/thumb/v8-m.main+fp/hard/bits/gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+mw/tensorflow/tensorflow/lite/micro/kernels/circular_buffer.cc:52:7:void* tflite::CircularBufferInit(TfLiteContext*, const char*, size_t)	48	static
+mw/tensorflow/tensorflow/lite/micro/kernels/circular_buffer.cc:72:6:void tflite::EvalInt8(const int8_t*, int, int, int8_t*)	24	static
+mw/tensorflow/tensorflow/lite/micro/kernels/circular_buffer.cc:77:14:TfLiteStatus tflite::CircularBufferEval(TfLiteContext*, TfLiteNode*)	48	static
+mw/tensorflow/tensorflow/lite/micro/kernels/circular_buffer.cc:111:21:TfLiteRegistration* tflite::Register_CIRCULAR_BUFFER()	24	static
+mw/tensorflow/tensorflow/lite/micro/kernels/kernel_util.h:71:10:const T* tflite::micro::GetTensorData(const TfLiteEvalTensor*) [with T = signed char]	16	static
+mw/tensorflow/tensorflow/lite/micro/kernels/kernel_util.h:64:4:T* tflite::micro::GetTensorData(TfLiteEvalTensor*) [with T = signed char]	16	static

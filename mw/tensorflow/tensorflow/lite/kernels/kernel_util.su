@@ -1,0 +1,92 @@
+/usr/include/newlib/c++/13.2.1/limits:525:7:static constexpr signed char std::numeric_limits<signed char>::min()	4	static
+/usr/include/newlib/c++/13.2.1/limits:528:7:static constexpr signed char std::numeric_limits<signed char>::max()	4	static
+/usr/include/newlib/c++/13.2.1/limits:595:7:static constexpr unsigned char std::numeric_limits<unsigned char>::min()	4	static
+/usr/include/newlib/c++/13.2.1/limits:598:7:static constexpr unsigned char std::numeric_limits<unsigned char>::max()	4	static
+/usr/include/newlib/c++/13.2.1/limits:925:7:static constexpr short int std::numeric_limits<short int>::min()	4	static
+/usr/include/newlib/c++/13.2.1/limits:928:7:static constexpr short int std::numeric_limits<short int>::max()	4	static
+/usr/include/newlib/c++/13.2.1/limits:1204:7:static constexpr long int std::numeric_limits<long int>::min()	4	static
+/usr/include/newlib/c++/13.2.1/limits:1207:7:static constexpr long int std::numeric_limits<long int>::max()	4	static
+/usr/include/newlib/c++/13.2.1/bits/std_abs.h:71:3:constexpr double std::abs(double)	16	static
+/usr/include/newlib/c++/13.2.1/bits/basic_string.h:4150:3:std::string std::__cxx11::to_string(int)	40	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.h:150:12:int tflite::NumDimensions(const TfLiteTensor*)	16	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.h:151:12:int tflite::SizeOfDimension(const TfLiteTensor*, int)	16	static
+/usr/include/newlib/c++/13.2.1/cmath:2482:3:constexpr float std::round(float)	16	static
+/usr/include/newlib/c++/13.2.1/arm-none-eabi/thumb/v8-m.main+fp/hard/bits/gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+mw/tensorflow/tensorflow/lite/context_util.h:36:12:tflite::TfLiteIntArrayView::TfLiteIntArrayView(const TfLiteIntArray*)	16	static
+mw/tensorflow/tensorflow/lite/context_util.h:43:18:const int* tflite::TfLiteIntArrayView::begin() const	16	static
+mw/tensorflow/tensorflow/lite/context_util.h:44:18:const int* tflite::TfLiteIntArrayView::end() const	16	static
+/usr/include/newlib/c++/13.2.1/bits/stl_algobase.h:233:5:constexpr const _Tp& std::min(const _Tp&, const _Tp&) [with _Tp = int]	16	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:43:22:TfLiteTensor* tflite::{anonymous}::GetTensorAtIndex(const TfLiteContext*, int)	16	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:53:21:TfLiteStatus tflite::{anonymous}::ValidateTensorIndexingSafe(const TfLiteContext*, int, int, const int*, int*)	32	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:76:12:int tflite::{anonymous}::ValidateTensorIndexing(const TfLiteContext*, int, int, const int*)	32	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:87:22:TfLiteTensor* tflite::{anonymous}::GetMutableInput(const TfLiteContext*, const TfLiteNode*, int)	32	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:97:21:TfLiteStatus tflite::{anonymous}::GetMutableInputSafe(const TfLiteContext*, const TfLiteNode*, int, const TfLiteTensor**)	40	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:110:21:const TfLiteTensor* tflite::GetInput(const TfLiteContext*, const TfLiteNode*, int)	24	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:115:14:TfLiteStatus tflite::GetInputSafe(const TfLiteContext*, const TfLiteNode*, int, const TfLiteTensor**)	24	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:120:15:TfLiteTensor* tflite::GetVariableInput(TfLiteContext*, const TfLiteNode*, int)	32	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:127:15:TfLiteTensor* tflite::GetOutput(TfLiteContext*, const TfLiteNode*, int)	32	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:137:14:TfLiteStatus tflite::GetOutputSafe(const TfLiteContext*, const TfLiteNode*, int, TfLiteTensor**)	40	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:147:21:const TfLiteTensor* tflite::GetOptionalInputTensor(const TfLiteContext*, const TfLiteNode*, int)	24	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:153:15:TfLiteTensor* tflite::GetTemporary(TfLiteContext*, const TfLiteNode*, int)	32	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:163:14:TfLiteStatus tflite::GetTemporarySafe(const TfLiteContext*, const TfLiteNode*, int, TfLiteTensor**)	40	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:174:21:const TfLiteTensor* tflite::GetIntermediates(TfLiteContext*, const TfLiteNode*, int)	32	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:184:14:TfLiteStatus tflite::GetIntermediatesSafe(const TfLiteContext*, const TfLiteNode*, int, TfLiteTensor**)	40	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:197:14:TfLiteStatus tflite::PopulateConvolutionQuantizationParams(TfLiteContext*, const TfLiteTensor*, const TfLiteTensor*, const TfLiteTensor*, TfLiteTensor*, const TfLiteFusedActivation&, int32_t*, int*, int32_t*, int32_t*, int32_t*, int32_t*)	72	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:212:14:TfLiteStatus tflite::PopulateConvolutionQuantizationParams(TfLiteContext*, const TfLiteTensor*, const TfLiteTensor*, const TfLiteTensor*, TfLiteTensor*, const TfLiteFusedActivation&, int32_t*, int*, int32_t*, int32_t*, int32_t*, int32_t*, int)	120	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:289:14:TfLiteStatus tflite::GetQuantizedConvolutionMultipler(TfLiteContext*, const TfLiteTensor*, const TfLiteTensor*, const TfLiteTensor*, TfLiteTensor*, double*)	72	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:326:14:TfLiteStatus tflite::GetQuantizedConvolutionMultipler(TfLiteContext*, const TfLiteTensor*, const TfLiteTensor*, TfLiteTensor*, double*)	48	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:341:21:TfLiteStatus tflite::{anonymous}::Quantize(TfLiteContext*, float, int32_t, float, int32_t&)	56	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:352:14:TfLiteStatus tflite::{anonymous}::CalculateActivationRangeQuantizedImpl(TfLiteContext*, TfLiteFusedActivation, int32_t, int32_t, TfLiteTensor*, int32_t*, int32_t*)	48	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:386:14:TfLiteStatus tflite::CalculateActivationRangeQuantized(TfLiteContext*, TfLiteFusedActivation, TfLiteTensor*, int32_t*, int32_t*)	56	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:410:6:bool tflite::HaveSameShapes(const TfLiteTensor*, const TfLiteTensor*)	16	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:415:14:TfLiteStatus tflite::GetOutputShapeFromInput(TfLiteContext*, const TfLiteTensor*, TfLiteIntArray**)	56	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:439:19:const std::string tflite::GetShapeDebugString(const TfLiteIntArray*)	120	static
+/usr/include/newlib/c++/13.2.1/bits/stl_algobase.h:257:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = int]	16	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:457:14:TfLiteStatus tflite::CalculateShapeForBroadcast(TfLiteContext*, const TfLiteTensor*, const TfLiteTensor*, TfLiteIntArray**)	120	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:488:14:TfLiteStatus tflite::CalculateShapeForBroadcast(TfLiteContext*, const TfLiteTensor*, const TfLiteTensor*, const TfLiteTensor*, TfLiteIntArray**)	176	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:524:5:int tflite::TfLiteTypeGetSize(TfLiteType)	16	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:572:6:bool tflite::IsMobilePlatform()	4	static
+mw/tensorflow/tensorflow/lite/kernels/kernel_util.cc:583:6:bool tflite::HasUnspecifiedDimension(const TfLiteTensor*)	40	static
+/usr/include/newlib/c++/13.2.1/bits/charconv.h:55:5:constexpr unsigned int std::__detail::__to_chars_len(_Tp, int) [with _Tp = unsigned int]	32	static
+/usr/include/newlib/c++/13.2.1/bits/basic_string.h:181:14:std::__cxx11::basic_string<char>::_Alloc_hider::~_Alloc_hider()	24	static
+/usr/include/newlib/c++/13.2.1/bits/basic_string.h:654:7:std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string(size_type, _CharT, const _Alloc&) [with <template-parameter-2-1> = std::allocator<char>; _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>]	32	static
+/usr/include/newlib/c++/13.2.1/bits/charconv.h:81:5:void std::__detail::__to_chars_10_impl(char*, unsigned int, _Tp) [with _Tp = unsigned int]	240	static
+/usr/include/newlib/c++/13.2.1/bits/basic_string.h:3662:5:std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(const _CharT*, __cxx11::basic_string<_CharT, _Traits, _Allocator>&&) [with _CharT = char; _Traits = char_traits<char>; _Alloc = allocator<char>]	24	static
+/usr/include/newlib/c++/13.2.1/bits/stl_algobase.h:233:5:constexpr const _Tp& std::min(const _Tp&, const _Tp&) [with _Tp = long int]	16	static
+mw/tensorflow/tensorflow/lite/kernels/internal/cppmath.h:35:1:T tflite::TfLiteRound(T) [with T = float]	16	static
+/usr/include/newlib/c++/13.2.1/bits/stl_algobase.h:257:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = long int]	16	static
+/usr/include/newlib/c++/13.2.1/bits/unique_ptr.h:241:40:std::__uniq_ptr_data<TfLiteIntArray, void (*)(TfLiteIntArray*), true, true>::__uniq_ptr_data(std::__uniq_ptr_impl<TfLiteIntArray, void (*)(TfLiteIntArray*)>::pointer, _Del&&) [with _Del = void (*)(TfLiteIntArray*)][inherited from std::__uniq_ptr_impl<TfLiteIntArray, void (*)(TfLiteIntArray*)>]	24	static
+/usr/include/newlib/c++/13.2.1/bits/unique_ptr.h:344:2:std::unique_ptr<_Tp, _Dp>::unique_ptr(pointer, std::__enable_if_t<(! std::is_lvalue_reference<_Del>::value), _Del&&>) [with _Del = void (*)(TfLiteIntArray*); <template-parameter-2-2> = void; _Tp = TfLiteIntArray; _Dp = void (*)(TfLiteIntArray*)]	32	static
+/usr/include/newlib/c++/13.2.1/bits/unique_ptr.h:398:7:std::unique_ptr<_Tp, _Dp>::~unique_ptr() [with _Tp = TfLiteIntArray; _Dp = void (*)(TfLiteIntArray*)]	32	static
+/usr/include/newlib/c++/13.2.1/bits/unique_ptr.h:460:7:std::unique_ptr<_Tp, _Dp>::pointer std::unique_ptr<_Tp, _Dp>::operator->() const [with _Tp = TfLiteIntArray; _Dp = void (*)(TfLiteIntArray*)]	16	static
+/usr/include/newlib/c++/13.2.1/bits/unique_ptr.h:494:7:std::unique_ptr<_Tp, _Dp>::pointer std::unique_ptr<_Tp, _Dp>::release() [with _Tp = TfLiteIntArray; _Dp = void (*)(TfLiteIntArray*)]	16	static
+/usr/include/newlib/c++/13.2.1/bits/new_allocator.h:100:7:std::__new_allocator<_Tp>::~__new_allocator() [with _Tp = char]	16	static
+/usr/include/newlib/c++/13.2.1/bits/move.h:97:5:constexpr typename std::remove_reference<_Tp>::type&& std::move(_Tp&&) [with _Tp = __cxx11::basic_string<char>&]	16	static
+/usr/include/newlib/c++/13.2.1/bits/move.h:97:5:constexpr typename std::remove_reference<_Tp>::type&& std::move(_Tp&&) [with _Tp = void (*&)(TfLiteIntArray*)]	16	static
+/usr/include/newlib/c++/13.2.1/bits/unique_ptr.h:180:2:std::__uniq_ptr_impl<_Tp, _Dp>::__uniq_ptr_impl(pointer, _Del&&) [with _Del = void (*)(TfLiteIntArray*); _Tp = TfLiteIntArray; _Dp = void (*)(TfLiteIntArray*)]	32	static
+/usr/include/newlib/c++/13.2.1/bits/unique_ptr.h:197:18:std::__uniq_ptr_impl<_Tp, _Dp>::pointer& std::__uniq_ptr_impl<_Tp, _Dp>::_M_ptr() [with _Tp = TfLiteIntArray; _Dp = void (*)(TfLiteIntArray*)]	16	static
+/usr/include/newlib/c++/13.2.1/bits/unique_ptr.h:475:7:std::unique_ptr<_Tp, _Dp>::deleter_type& std::unique_ptr<_Tp, _Dp>::get_deleter() [with _Tp = TfLiteIntArray; _Dp = void (*)(TfLiteIntArray*)]	16	static
+/usr/include/newlib/c++/13.2.1/bits/move.h:97:5:constexpr typename std::remove_reference<_Tp>::type&& std::move(_Tp&&) [with _Tp = TfLiteIntArray*&]	16	static
+/usr/include/newlib/c++/13.2.1/bits/unique_ptr.h:469:7:std::unique_ptr<_Tp, _Dp>::pointer std::unique_ptr<_Tp, _Dp>::get() const [with _Tp = TfLiteIntArray; _Dp = void (*)(TfLiteIntArray*)]	16	static
+/usr/include/newlib/c++/13.2.1/bits/unique_ptr.h:215:15:std::__uniq_ptr_impl<_Tp, _Dp>::pointer std::__uniq_ptr_impl<_Tp, _Dp>::release() [with _Tp = TfLiteIntArray; _Dp = void (*)(TfLiteIntArray*)]	24	static
+/usr/include/newlib/c++/13.2.1/bits/move.h:70:5:constexpr _Tp&& std::forward(typename remove_reference<_Functor>::type&) [with _Tp = void (*)(TfLiteIntArray*)]	16	static
+/usr/include/newlib/c++/13.2.1/tuple:1338:2:constexpr std::tuple<_T1, _T2>::tuple(_U1&&, _U2&&) [with _U1 = TfLiteIntArray*&; _U2 = void (*)(TfLiteIntArray*); typename std::enable_if<std::_TupleConstraints<(! __is_alloc_arg<_U1>()), _T1, _T2>::__is_implicitly_constructible<_U1, _U2>(), bool>::type <anonymous> = true; _T1 = TfLiteIntArray*; _T2 = void (*)(TfLiteIntArray*)]	32	static
+/usr/include/newlib/c++/13.2.1/tuple:1789:5:>&) [with unsigned int __i = 0; _Elements = {TfLiteIntArray*, void (*)(TfLiteIntArray*)}]	16	static
+/usr/include/newlib/c++/13.2.1/bits/unique_ptr.h:201:18:_Dp& std::__uniq_ptr_impl<_Tp, _Dp>::_M_deleter() [with _Tp = TfLiteIntArray; _Dp = void (*)(TfLiteIntArray*)]	16	static
+/usr/include/newlib/c++/13.2.1/bits/unique_ptr.h:199:18:std::__uniq_ptr_impl<_Tp, _Dp>::pointer std::__uniq_ptr_impl<_Tp, _Dp>::_M_ptr() const [with _Tp = TfLiteIntArray; _Dp = void (*)(TfLiteIntArray*)]	16	static
+/usr/include/newlib/c++/13.2.1/bits/move.h:70:5:constexpr _Tp&& std::forward(typename remove_reference<_Functor>::type&) [with _Tp = TfLiteIntArray*&]	16	static
+/usr/include/newlib/c++/13.2.1/tuple:291:2:) [with _UHead = TfLiteIntArray*&; _UTail = {void (*)(TfLiteIntArray*)}; <template-parameter-2-3> = void; unsigned int _Idx = 0; _Head = TfLiteIntArray*; _Tail = {void (*)(TfLiteIntArray*)}]	32	static
+/usr/include/newlib/c++/13.2.1/tuple:1773:5:>&) [with unsigned int __i = 0; _Head = TfLiteIntArray*; _Tail = {void (*)(TfLiteIntArray*)}]	16	static
+/usr/include/newlib/c++/13.2.1/tuple:1789:5:>&) [with unsigned int __i = 1; _Elements = {TfLiteIntArray*, void (*)(TfLiteIntArray*)}]	16	static
+/usr/include/newlib/c++/13.2.1/tuple:1795:5:>&) [with unsigned int __i = 0; _Elements = {TfLiteIntArray*, void (*)(TfLiteIntArray*)}]	16	static
+/usr/include/newlib/c++/13.2.1/tuple:513:2:constexpr std::_Tuple_impl<_Idx, _Head>::_Tuple_impl(_UHead&&) [with _UHead = void (*)(TfLiteIntArray*); unsigned int _Idx = 1; _Head = void (*)(TfLiteIntArray*)]	24	static
+/usr/include/newlib/c++/13.2.1/tuple:200:19:constexpr std::_Head_base<_Idx, _Head, false>::_Head_base(_UHead&&) [with _UHead = TfLiteIntArray*&; unsigned int _Idx = 0; _Head = TfLiteIntArray*]	16	static
+/usr/include/newlib/c++/13.2.1/tuple:269:7:>&) [with unsigned int _Idx = 0; _Head = TfLiteIntArray*; _Tail = {void (*)(TfLiteIntArray*)}]	16	static
+/usr/include/newlib/c++/13.2.1/tuple:1773:5:>&) [with unsigned int __i = 1; _Head = void (*)(TfLiteIntArray*); _Tail = {}]	16	static
+/usr/include/newlib/c++/13.2.1/tuple:1778:5:>&) [with unsigned int __i = 0; _Head = TfLiteIntArray*; _Tail = {void (*)(TfLiteIntArray*)}]	16	static
+/usr/include/newlib/c++/13.2.1/tuple:200:19:constexpr std::_Head_base<_Idx, _Head, false>::_Head_base(_UHead&&) [with _UHead = void (*)(TfLiteIntArray*); unsigned int _Idx = 1; _Head = void (*)(TfLiteIntArray*)]	16	static
+/usr/include/newlib/c++/13.2.1/tuple:234:7:static constexpr _Head& std::_Head_base<_Idx, _Head, false>::_M_head(std::_Head_base<_Idx, _Head, false>&) [with unsigned int _Idx = 0; _Head = TfLiteIntArray*]	16	static
+/usr/include/newlib/c++/13.2.1/tuple:497:7:static constexpr _Head& std::_Tuple_impl<_Idx, _Head>::_M_head(std::_Tuple_impl<_Idx, _Head>&) [with unsigned int _Idx = 1; _Head = void (*)(TfLiteIntArray*)]	16	static
+/usr/include/newlib/c++/13.2.1/tuple:272:7:>&) [with unsigned int _Idx = 0; _Head = TfLiteIntArray*; _Tail = {void (*)(TfLiteIntArray*)}]	16	static
+/usr/include/newlib/c++/13.2.1/tuple:234:7:static constexpr _Head& std::_Head_base<_Idx, _Head, false>::_M_head(std::_Head_base<_Idx, _Head, false>&) [with unsigned int _Idx = 1; _Head = void (*)(TfLiteIntArray*)]	16	static
+/usr/include/newlib/c++/13.2.1/tuple:237:7:static constexpr const _Head& std::_Head_base<_Idx, _Head, false>::_M_head(const std::_Head_base<_Idx, _Head, false>&) [with unsigned int _Idx = 0; _Head = TfLiteIntArray*]	16	static

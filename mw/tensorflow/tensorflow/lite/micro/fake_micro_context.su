@@ -1,0 +1,12 @@
+/usr/include/newlib/c++/13.2.1/arm-none-eabi/thumb/v8-m.main+fp/hard/bits/gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+mw/tensorflow/tensorflow/lite/micro/micro_arena_constants.h:24:15:constexpr int tflite::MicroArenaBufferAlignment()	4	static
+mw/tensorflow/tensorflow/lite/micro/fake_micro_context.cc:32:1:tflite::FakeMicroContext::FakeMicroContext(TfLiteTensor*, tflite::SingleArenaBufferAllocator*, tflite::MicroGraph*)	32	static
+mw/tensorflow/tensorflow/lite/micro/fake_micro_context.cc:41:15:virtual TfLiteTensor* tflite::FakeMicroContext::AllocateTempTfLiteTensor(int)	16	static
+mw/tensorflow/tensorflow/lite/micro/fake_micro_context.cc:46:6:virtual void tflite::FakeMicroContext::DeallocateTempTfLiteTensor(TfLiteTensor*)	16	static
+mw/tensorflow/tensorflow/lite/micro/fake_micro_context.cc:50:6:bool tflite::FakeMicroContext::IsAllTempTfLiteTensorDeallocated()	16	static
+mw/tensorflow/tensorflow/lite/micro/fake_micro_context.cc:54:19:virtual TfLiteEvalTensor* tflite::FakeMicroContext::GetEvalTensor(int)	24	static
+mw/tensorflow/tensorflow/lite/micro/fake_micro_context.cc:68:7:virtual void* tflite::FakeMicroContext::AllocatePersistentBuffer(size_t)	24	static
+mw/tensorflow/tensorflow/lite/micro/fake_micro_context.cc:77:14:virtual TfLiteStatus tflite::FakeMicroContext::RequestScratchBufferInArena(size_t, int*)	40	static
+mw/tensorflow/tensorflow/lite/micro/fake_micro_context.cc:98:7:virtual void* tflite::FakeMicroContext::GetScratchBuffer(int)	16	static
+mw/tensorflow/tensorflow/lite/micro/fake_micro_context.h:24:7:tflite::FakeMicroContext::~FakeMicroContext()	16	static
+mw/tensorflow/tensorflow/lite/micro/fake_micro_context.h:24:7:virtual tflite::FakeMicroContext::~FakeMicroContext()	16	static
