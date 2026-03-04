@@ -11,12 +11,14 @@ OPENOCD_SCRIPT_PATH ?= $(CURDIR)/openocd  # openocd scripts
 # compiler flags (debug, arm-m33, nano specs, CMSIS macros)
 CFLAGS  = -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG \
           -DSTM32 -DSTM32U585xx -DB_U585I_IOT02A -DSTM32U585AIIxQ -DSTM32U5 \
+          -DARM_MATH_CM33 -DARM_MATH_DSP -DCMSIS_NN \
           -O0 -ffunction-sections -fdata-sections \
           -Wall -fstack-usage \
           --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb
 
 CXXFLAGS = -mcpu=cortex-m33 -std=gnu++17 -g3 -DDEBUG \
             -DSTM32 -DSTM32U585xx -DB_U585I_IOT02A -DSTM32U585AIIxQ -DSTM32U5 \
+            -DARM_MATH_CM33 -DARM_MATH_DSP -DCMSIS_NN \
             -O0 -ffunction-sections -fdata-sections \
             -Wall -fstack-usage \
             --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb
