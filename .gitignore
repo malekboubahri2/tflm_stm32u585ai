@@ -16,6 +16,9 @@ build/
 *.o
 *.d
 
+# Generated .su files (build artifacts)
+*.su
+
 # Python virtualenvs (if any)
 venv/
 
