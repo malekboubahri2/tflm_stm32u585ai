@@ -36,5 +36,12 @@ if [ ! -d "$TARGET_DIR" ]; then
     fi
 fi
 
-# prepend the new toolchain to PATH
+# prepend the new toolchain to PATH (for current session)
 export PATH="$TARGET_DIR/bin:${PATH}"
+
+# also add to ~/.bashrc so it persists in future terminal sessions
+if ! grep -q "export PATH=\"$TARGET_DIR/bin:\${PATH}\"" ~/.bashrc 2>/dev/null; then
+    echo "" >> ~/.bashrc
+    echo "# ARM GNU toolchain" >> ~/.bashrc
+    echo "export PATH=\"$TARGET_DIR/bin:\${PATH}\"" >> ~/.bashrc
+fi
