@@ -27,6 +27,42 @@ To get started:
    and all dependencies via `.devcontainer/scripts/setup.sh`
 5. Run `make` inside the container terminal
 
+## Debugging
+
+Full embedded debugging is configured out of the box via VS Code and 
+the Cortex-Debug extension.
+
+**Setup:**
+- Debugger: `arm-none-eabi-gdb` via OpenOCD + ST-Link
+- SVD file: `STM32U585.svd` — enables peripheral register inspection 
+  (GPIO, DMA, CRYP, etc.) directly in VS Code
+- Entry point: auto-breaks at `main` on launch
+- Pre-launch task: automatically flashes firmware before debug session starts
+
+**SWO Tracing:**
+- CPU frequency: 160 MHz
+- SWO frequency: 2 MHz
+- ITM channel 0 decoded as console — inference output streams live 
+  during debug session
+
+**To start a debug session:**
+1. Open the repo in the Dev Container
+2. Press `F5` in VS Code
+3. Firmware builds, flashes, and halts at `main` automatically
+4. Set breakpoints anywhere — including inside `run_inference()` 
+   to inspect quantized tensors and intermediate values live
+```json
+// .vscode/launch.json — cortex-debug config
+"svdFile": "drivers/CMSIS/Device/ST/STM32U5xx/Include/STM32U585.svd",
+"swoConfig": {
+    "enabled": true,
+    "cpuFrequency": 160000000,
+    "swoFrequency":  2000000,
+    "source": "probe",
+    "decoders": [{ "port": 0, "type": "console" }]
+}
+```
+
 ## Model
 - Task: Sine wave regression — predict sin(x) from x
 - Training: TensorFlow/Keras in Python
