@@ -1,6 +1,5 @@
 #include <stdint.h>
 #include <stdio.h>
-#include "stm32u5xx.h" 
 #include "system_ai.h"
 
 extern "C"{
@@ -15,10 +14,13 @@ extern "C"{
 
 int main(void)
 {
+	dwt_init();
+
 	configure_model();
 
-	while(1)
-	{
+	benchmark_inference(1000);
+
+	while (1) {
 		run_inference();
 	}
 }

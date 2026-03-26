@@ -1,8 +1,8 @@
 
 
 //STEP: 1
-#include "tensorflow/lite/micro/mcu_custom_port/debug_log_callback.h"
-#include "tensorflow/lite/micro/all_ops_resolver.h"
+#include "tensorflow/lite/micro/cortex_m_generic/debug_log_callback.h"
+#include "tensorflow/lite/micro/micro_mutable_op_resolver.h"
 #include "tensorflow/lite/micro/micro_interpreter.h"
 #include "tensorflow/lite/micro/micro_log.h"
 #include "tensorflow/lite/micro/system_setup.h"
@@ -62,10 +62,18 @@ void configure_model(){
 	   // return;
 	 }
 	 /*5. Get operations needed*/
-	 static tflite::AllOpsResolver resolver;
+	static tflite::MicroMutableOpResolver<3> micro_op_resolver;
+	TfLiteStatus status = micro_op_resolver.AddQuantize();
+	status = micro_op_resolver.AddDequantize();
+	status = micro_op_resolver.AddFullyConnected();
+	if (status != kTfLiteOk)
+	{
+		MicroPrintf("Failed to add ops\r\n");
+	}
+	
 
 	 /*6. Configure interpreter*/
-	 static tflite::MicroInterpreter static_interpreter(model,resolver,tensor_arena,kTensorArenaSize);
+	 static tflite::MicroInterpreter static_interpreter(model,micro_op_resolver,tensor_arena,kTensorArenaSize);
 	 interpreter =  &static_interpreter;
 
 	 /*7. Allocate memory from the tensor arena*/
@@ -83,43 +91,75 @@ void configure_model(){
 
 float y;
 
-void run_inference(){
+void benchmark_inference(uint32_t repeats = 1000) {
+  if (interpreter == nullptr || input == nullptr) {
+    MicroPrintf("Benchmark aborted: interpreter not configured\n");
+    return;
+  }
 
-	/*1.Compute x value*/
-	float position  =  static_cast<float>(inference_count)/ static_cast<float>(kInferencesPerCycle);
-	float x =  position * kXrange;
+  // Warm up the kernel to stabilize caches and branch predictions.
+  for (uint32_t i = 0; i < 16; ++i) {
+    float position = static_cast<float>(i) / static_cast<float>(kInferencesPerCycle);
+    float x = position * kXrange;
+    int8_t x_quantized = x / input->params.scale + input->params.zero_point;
+    input->data.int8[0] = x_quantized;
+    interpreter->Invoke();
+  }
 
-	/*2.Quantize x value*/
-	int8_t x_quantized = x / input->params.scale  + input->params.zero_point;
+  uint32_t start_cycles = dwt_get_cycles();
+  for (uint32_t i = 0; i < repeats; ++i) {
+    float position = static_cast<float>(i) / static_cast<float>(kInferencesPerCycle);
+    float x = position * kXrange;
+    int8_t x_quantized = x / input->params.scale + input->params.zero_point;
+    input->data.int8[0] = x_quantized;
+    interpreter->Invoke();
+  }
+  uint32_t total_cycles = dwt_get_cycles() - start_cycles;
 
-	/*3.Place quantized x value in the input tensor*/
-	input->data.int8[0] = x_quantized;
+  float avg_cycles = (float)total_cycles / (float)repeats;
+  MicroPrintf("Benchmark: %u runs, total %u cycles, avg %.1f cycles/run\n",
+              repeats, total_cycles, avg_cycles);
+}
 
-	/*4.Invoke the interpreter to run the inference*/
-	TfLiteStatus  status =  interpreter->Invoke();
+void run_inference() {
 
-	if(status != kTfLiteOk)
-	{
-		 MicroPrintf("Unable to invoke interpreter\r\n");
+    float position = static_cast<float>(inference_count) /
+                     static_cast<float>(kInferencesPerCycle);
+    float x = position * kXrange;
 
-	}
-	/*5.Obtain quantized output*/
-	int8_t y_quantized = output->data.int8[0];
+    int8_t x_quantized = x / input->params.scale + input->params.zero_point;
+    input->data.int8[0] = x_quantized;
 
-	/*6.Dequantize the output*/
-	 y =  (y_quantized - output->params.zero_point) * output->params.scale;
+    /* --- start cycle count --- */
+    uint32_t cycles_start = dwt_get_cycles();
 
-	/*9.Handle output*/
-	 handle_output(x, y);
+    TfLiteStatus status = interpreter->Invoke();
 
-	/*10. Increment inference count and reset if it crosses a threshold*/
-	 inference_count += 1;
+    uint32_t cycles_elapsed = dwt_get_cycles() - cycles_start;
+    /* --- end cycle count --- */
 
-	 if(inference_count >= kInferencesPerCycle)
-	 {
-		 inference_count = 0;
-	 }
+    if (status != kTfLiteOk) {
+        MicroPrintf("Unable to invoke interpreter\r\n");
+    }
 
+    int8_t y_quantized = output->data.int8[0];
+    float y = (y_quantized - output->params.zero_point) * output->params.scale;
+
+    //handle_output(x, y);
+
+    /* log cycles every inference */
+    /* convert floats to integers for printing */
+	float elapsed_ms = (float)cycles_elapsed / (float)SystemCoreClock * 1000.0f;
+	int ms_int  = (int)elapsed_ms;
+	int ms_frac = (int)((elapsed_ms - ms_int) * 1000);
+
+	MicroPrintf("x: %f  y: %f  time: %d.%d ms\r\n",
+        x, y, ms_int, ms_frac);
+
+    inference_count += 1;
+    if (inference_count >= kInferencesPerCycle) {
+        inference_count = 0;
+    }
 }
 
 
